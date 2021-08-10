@@ -1,3 +1,4 @@
+require "pry"
 # your code goes here
 class Person
   attr_reader :name, :happiness, :hygiene
@@ -42,12 +43,18 @@ class Person
     "♪ another one bites the dust ♫"
   end
 
+  def call_friend(friend)
+    self.happiness += 3
+    friend.happiness += 3
+    "Hi #{friend.name}! It's #{self.name}. How are you?"
+  end
+
   def calculate_score(num)
-    if num < 0 
+    if num < 0
       0
     elsif num > 10
       10
-    else 
+    else
       num
     end
   end
